@@ -396,9 +396,11 @@ header nav ul li a:hover{
     } */
     .btn-derecha{
         position: relative;
+        right: 0;
     }
     .btn-izquierda{
         position: relative;
+        left: 0;
     }
     .productos{
         flex-direction: column-reverse;
