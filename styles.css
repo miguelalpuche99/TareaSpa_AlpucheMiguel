@@ -54,9 +54,14 @@ body{
 }
 .redes i{
     font-size: 40px;
+    color: #333;
+    transition: all .5s;
+}
+.redes a:hover i{
+    color: #FF3281;
 }
 .redes i:hover{
-    color: #FF3281;
+    transform: rotate(360deg);
 }
 header nav{
     text-align: center;
@@ -107,9 +112,12 @@ header nav ul li a:hover{
 }
 .botones {
     width: 25%;
+    height: 80px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    position: relative;
+    overflow: hidden;
     /* border: 1px solid red; */
 }
 .botones a{
@@ -120,6 +128,24 @@ header nav ul li a:hover{
     border: 1px solid #FF3281;
     border-radius: 5px;
     font-size: 15px;
+}
+.btn-izquierda{
+    position: absolute;
+    top: 0;
+    left: -100%;
+    transition: all .8s;
+}
+.btn-derecha{
+    position: absolute;
+    top: 0;
+    right: -100%;
+    transition: all .8s;
+}
+.promociones:hover .btn-izquierda{
+    left: 0;
+}
+.promociones:hover .btn-derecha{
+    right: 0;
 }
 .botones a:hover{
     background-color: #FF3281;
@@ -138,21 +164,28 @@ header nav ul li a:hover{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    position: relative;
+    overflow: hidden;
 }
 .productos div{
     max-width: 40%;
+    padding: 50px 0px;
 }
 .productos figure{
     /* border: 1px solid blue; */
     padding: 10px;
     background-color: #333;
     filter: opacity(.3);
-    transition: all .5s;
+    position: absolute;
+    right: 0;
+    top: -150%;
 }
-/* .productos figure img{
-    border: 1px solid green;
-} */
 .productos:hover figure{
+    transition: .5s;
+    top: 0;
+}
+.productos figure:hover{
+    transition: .5s;
     filter: opacity(1);
 }
 .trabajo p{
@@ -163,25 +196,36 @@ header nav ul li a:hover{
 .empleos{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
     gap: 20px;
+    position: relative;
+    overflow: hidden;
 }
 .empleos figure{
     width: 50%;
+    position: absolute;
+    left: 0;
+    bottom: -100%;
+    transition: bottom .8s;
     /* border: 1px solid red; */
+}
+.empleos:hover figure{
+    left: 0;
+    bottom: 0;
 }
 .empleos figure img{
     width: 100%;
     height: 100%;
     filter: sepia(1);
     border-radius: 5%;
-    transition: all .5s;
 }
-.empleos:hover img{
+.empleos figure:hover img{
+    transition: .5s;
     filter: sepia(0);
 }
 .empleos div{
     width: 50%;
+    padding-left: 20px;
     /* border: 1px solid red; */
 }
 .empleos h3{
@@ -349,6 +393,12 @@ header nav ul li a:hover{
     .botones{
         width: 50%;
     }
+    .btn-derecha{
+        position: relative;
+    }
+    .btn-izquierda{
+        position: relative;
+    }
     .productos{
         flex-direction: column-reverse;
         align-items: center;
@@ -361,6 +411,7 @@ header nav ul li a:hover{
     }
     .productos figure{
         width: 90%;
+        position: relative;
     }
     .productos figure img{
         width: 100%;
@@ -372,6 +423,7 @@ header nav ul li a:hover{
     }
     .empleos figure{
         width: 100%;
+        position: relative;
     }
     .empleos div{
         width: 100%;
