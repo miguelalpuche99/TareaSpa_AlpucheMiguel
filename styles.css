@@ -65,7 +65,7 @@ body{
 }
 header nav{
     text-align: center;
-    /* border: 1px solid red; */
+    border: 5px solid black;
 }
 header nav ul{
     list-style: none;
